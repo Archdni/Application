@@ -1,7 +1,8 @@
+import 'package:archdni/core/constant/routs.dart';
 import 'package:archdni/view/widget/language/changelocal.dart';
 import 'package:archdni/view/widget/language/custombutton.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; 
+import 'package:get/get.dart';
 
 class Language extends GetView<LocaleController> {
   const Language({Key? key}) : super(key: key);
@@ -27,15 +28,14 @@ class Language extends GetView<LocaleController> {
                   textbutton: "AR",
                   onPressed: (() {
                     controller.changeLang("ar");
-                      
-                 
+                    Get.offNamed(AppRoutes.home);
                   }),
                 ),
                 AppCustomButtonLang(
                   textbutton: "EN",
                   onPressed: (() {
                     controller.changeLang("en");
-                    
+                    Get.offNamed(AppRoutes.home);
                   }),
                 ),
               ],

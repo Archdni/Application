@@ -5,10 +5,12 @@ class AppTranslations extends Translations {
   Map<String, Map<String, String>> get keys => {
         "ar": {
           "lantitel": "اختر اللغة",
+          "Home": "الرئيسية",
            
         },
         "en": {
           "lantitel": "Choose Your Language",
+          "Home": "Home",
            
 
 

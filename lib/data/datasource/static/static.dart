@@ -1,23 +1,23 @@
-import 'package:archdni/view/screens/dashboard.dart4';
+import 'package:archdni/view/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-List<BottomNavigationBarItem> bottomBarItems =
-    const [
+List<BottomNavigationBarItem> bottomBarItems = [
   BottomNavigationBarItem(
-    icon: Icon(Icons.home),
-    label: 'Home',
+    icon: const Icon(Icons.home),
+    label: 'Home'.tr,
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.business),
-    label: 'Business',
+    icon: const Icon(Icons.business),
+    label: 'Business'.tr,
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.school),
-    label: 'School',
+    icon: const Icon(Icons.school),
+    label: 'School'.tr,
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.settings),
-    label: 'Settings',
+    icon: const Icon(Icons.settings),
+    label: 'Settings'.tr,
   ),
 ];
 
@@ -26,7 +26,9 @@ List<Widget> widgetOptions = <Widget>[
   const Text(
     'Index 1: Business',
   ),
-  const Home(),
+  const Text(
+    'Index 2: Business',
+  ),
   const Text(
     'Index 3: Settings',
   ),

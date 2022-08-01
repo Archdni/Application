@@ -2,7 +2,8 @@ import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/core/services/services.dart';
 import 'package:archdni/localization/transilation.dart';
 import 'package:archdni/root.dart';
-import 'package:archdni/view/screens/dashboard.dart';
+import 'package:archdni/test.dart';
+ import 'package:archdni/view/screens/language.dart';
 import 'package:archdni/view/widget/language/changelocal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,11 +40,11 @@ class MyApp extends StatelessWidget {
               height: 2.3,
               fontFamily: AppFont.primary),
           headline1: TextStyle(
-              color: Colors.black, fontSize: 24),
+              color: Colors.black, fontSize: 25),
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Dashboard(),
+      home: const Language(),
       routes: routes,
     );
   }

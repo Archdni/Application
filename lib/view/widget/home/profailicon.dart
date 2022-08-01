@@ -9,20 +9,22 @@ class AppProfaileIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+       
       child: Container(
         margin: const EdgeInsets.symmetric(
-            vertical: 5, horizontal: 10),
+            vertical: 5, horizontal: 5),
         height: 45,
         width: 45,
         decoration: const BoxDecoration(
-          boxShadow:[ BoxShadow(
-            color: Colors.black12,
-            blurRadius: 5,
-            spreadRadius: 1,
-          ),] ,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 5,
+              spreadRadius: 1,
+            ),
+          ],
           borderRadius: BorderRadius.all(
               Radius.circular(22.5)),
-          
           image: DecorationImage(
             image: AssetImage(
                 'assets/images/Avatar.jpg'),
@@ -31,7 +33,7 @@ class AppProfaileIcon extends StatelessWidget {
         ),
       ),
       onTap: () {
-         Get.toNamed( AppRoutes.profile);
+        Get.toNamed(AppRoutes.profile);
       },
     );
   }

@@ -1,20 +1,18 @@
- import 'package:archdni/view/widget/home/stare.dart';
+import 'package:archdni/view/widget/home/stare.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class TestController
-    extends GetxController {
-  rating();
+abstract class CardController extends GetxController {
+  rating(int rating);
 }
-
-class TestControllerImp extends TestController {
-  late int _rating = 4;
+class CardControllerImp extends CardController {
+   
 
   @override
-  rating() {
+  rating(int rating) {
     List<Widget> star = [];
     for (int i = 0; i < 5; i++) {
-      if (i < _rating) {
+      if (i <  rating) {
         star.add(
             const AppStar(color: Color(0xFFFDCC0D)));
       } else {

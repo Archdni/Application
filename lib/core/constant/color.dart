@@ -1,8 +1,5 @@
- 
-class AppColor {
-   
-}
+class AppColor {}
 
 class AppFont {
-  static const String primary = "Poppins";
+  static const String primary = "poppins";
 }

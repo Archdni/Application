@@ -41,10 +41,11 @@ class MyApp extends StatelessWidget {
               fontFamily: AppFont.primary),
           headline1: TextStyle(
               color: Colors.black, fontSize: 25),
+               
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Language(),
+      home: const Test(),
       routes: routes,
     );
   }

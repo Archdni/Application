@@ -3,11 +3,12 @@ class SchoolModel {
   final String? location;
   final String? imageUrl;
   final String? description;
-  final int? rating;
+  final String? phone;
+  final double? rating;
   final String? price;
   final int? students;
 
-  SchoolModel(
+  SchoolModel(this.phone, 
       {this.name,
       this.location,
       this.imageUrl,

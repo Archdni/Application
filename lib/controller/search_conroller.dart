@@ -1,35 +1,37 @@
 // ignore_for_file: annotate_overrides
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:archdni/data/datasource/firebasedata.dart';
 import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:get/get.dart';
 
 abstract class SearchController
     extends GetxController {
-   
-   List< SchoolModel>  foundSchool  =
-       [];
+  List foundSchool = [];
 
   onInit();
- 
+
   filterSchool(String name);
+  
 }
 
-  class SearchControllerImp
+class SearchControllerImp
     extends SearchController {
-      late int len = foundSchool.length;
-  @override 
+  late int len = foundSchool.length;
+  List<SchoolModel> results = [];
+   
+
+
+
+  @override
   void onInit() {
-     foundSchool = listSchools; 
+    foundSchool = [];
       super.onInit();
   }
 
- List< SchoolModel> results = [];
+  
   void filterSchool(String name) {
-   
-
-   
-    if (name.isEmpty) {   
+    if (name.isEmpty) {
       results = listSchools;
     } else {
       results = listSchools
@@ -40,6 +42,6 @@ abstract class SearchController
           .toList();
     }
     foundSchool = results;
-     update(); 
-  }  
+    update();
+  }
 }

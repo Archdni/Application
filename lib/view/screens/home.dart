@@ -43,9 +43,8 @@ class Home extends GetView<HomeController> {
                 color: Colors.grey,
                 thickness: 0.3,
               ),
-              Expanded(
-             
-                  child: const AppSearchHome())
+              const Expanded(
+                  child: AppSearchHome())
             ],
           ),
         ),

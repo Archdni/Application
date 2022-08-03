@@ -14,7 +14,7 @@ class AppSchoolButton extends StatelessWidget {
     required this.color,
      required this.bgColor,
   }) : super(key: key);
-
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(

@@ -8,10 +8,12 @@ class School extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SchoolControllerImp controller = Get.put(SchoolControllerImp());
-    return Scaffold(
+    print(controller.school);
+    
+    return   Scaffold(
       body: Center(
-        child:  Obx(() => Text("${controller.name}")),
+         child: Text(controller.school.rating!.toString()),
       ),
     );
   }
-}
+} 

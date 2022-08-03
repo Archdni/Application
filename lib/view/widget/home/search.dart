@@ -1,6 +1,5 @@
 import 'package:archdni/controller/search_conroller.dart';
-import 'package:archdni/view/widget/home/listeofschool.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AppSearchHome extends StatelessWidget {
@@ -20,15 +19,14 @@ class AppSearchHome extends StatelessWidget {
             height: Get.height * 0.07,
             child: TextField(
               onChanged: (value) {
-                controller.filterSchool(value);
+                //controller.data(value);
               },
               decoration: InputDecoration(
                 fillColor: Colors.blueGrey[200],
                 label: Container(
                   padding: EdgeInsets.only(
                       left: Get.width * 0.03),
-                  // ignore: prefer_const_constructors
-                  child: Text('Search School'),
+                   child:  const Text('Search School'),
                 ),
                 border: OutlineInputBorder(
                   borderRadius:
@@ -42,7 +40,7 @@ class AppSearchHome extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          AppListSchool(controller: controller),
+          //AppListSchool(controller: controller),
         ],
       ),
     );

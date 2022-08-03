@@ -40,6 +40,7 @@ dependencies:
   ionicons: ^0.2.1
   flutter_otp_text_field: ^1.0.1
   cloud_firestore: ^3.4.2
+  cached_network_image: ^3.2.1
 
 dev_dependencies:
   flutter_test:
@@ -52,7 +53,6 @@ dev_dependencies:
   intl: ^0.17.0
   http: ^0.13.4
   # Images
-  cached_network_image: ^3.2.0 
   # Animate
   show_up_animation: ^2.0.0
   auto_animated: ^3.0.1

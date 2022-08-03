@@ -8,7 +8,7 @@ abstract class TestController
 }
 
 class TestControllerImp extends TestController {
-  late int _rating = 4;
+    final int _rating = 4;
 
   @override
   rating() {

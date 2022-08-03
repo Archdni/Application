@@ -12,6 +12,13 @@ class AppTranslations extends Translations {
           "Hello": "مرحبا",
           "Welcome to Archdni , browse and discover the best Quran school.":
               "مرحبا بك  في أرشدني , تصفح\n واستعرض  أفضل مدارس  القرآن الكريم",
+              "finde Qurani schools" :" استكشف المدارس القرآنية"  ,
+              "Explore" : "استكشف",
+              "Location" : "الموقع",
+              "address :" : "العنوان :",
+              "phone :" : "الهاتف :",
+              "price :" : "السعر :",
+              "rating :" : "التقييم :",
            
         },
         "en": {
@@ -22,7 +29,15 @@ class AppTranslations extends Translations {
           "Settings": "Settings", 
           "Hello": "Hello",
           "Welcome to Archdni , browse and discover the best Quran school.": "Welcome to Archdni,browse and discover\nthe best Quran school.",
-           
+          "finde Qurani schools" : "finde Qurani schools",
+          "Explore" : "Explore",
+          "Location" : "Location",
+          "address :" : "address :",
+          "phone :" : "phone :",
+          "price :" : "price :",
+          "rating :" : "rating :",
+          
+
 
 
         }

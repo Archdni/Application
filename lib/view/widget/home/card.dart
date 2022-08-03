@@ -1,7 +1,11 @@
 import 'package:archdni/controller/search_conroller.dart';
+import 'package:archdni/core/constant/color.dart';
+import 'package:archdni/view/widget/home/cardbutton.dart';
+import 'package:archdni/view/widget/home/cardimage.dart';
+import 'package:archdni/view/widget/home/cardtext.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart'; 
+
 class AppCard
     extends GetView<SearchControllerImp> {
   final String name;
@@ -15,118 +19,93 @@ class AppCard
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: Get.height * 0.001,
-          vertical: Get.height * 0.005),
-      child: InkWell(
-        onTap: () => {},
-        child: Container(
-          height: Get.height * 0.16,
-          width: Get.width * 0.87,
+
+    return InkWell(
+      onTap: () => {
+        Get.toNamed('/school', arguments: name , ) ,
+        
+     
+      },
+      child: Container(
           decoration: BoxDecoration(
-            color: const Color.fromARGB(
-                255, 255, 255, 255),
+            color: Colors.white,
             borderRadius:
-                BorderRadius.circular(20),
-            boxShadow: const [
+                BorderRadius.circular(10),
+            boxShadow: [
               BoxShadow(
-                  blurRadius: 0.5,
-                  blurStyle: BlurStyle.outer,
-                  color: Color.fromARGB(
-                      255, 0, 0, 0))
+                color:
+                    Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 4,
+                offset: const Offset(0, 3),
+              ),
             ],
           ),
-          child: Row(
-            mainAxisAlignment:
-                MainAxisAlignment.spaceBetween,
-            children: [
-              //image of school
-              Container(
-                height: Get.height * 0.16,
-                width: Get.width * 0.3,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(image),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius:
-                      BorderRadius.circular(20),
-                ),
-              ),
-              //info of school
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: Get.height * 0.01,
-                    vertical: Get.height * 0.01),
-                child: Column(
-                  crossAxisAlignment:
-                      CrossAxisAlignment.start,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+                vertical: Get.height * 0.01,
+                horizontal: Get.width * 0.04),
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    Text(
-                      name,
-                      style: ThemeData()
-                          .textTheme
-                          .headline1!
-                          .copyWith(
-                              color: Colors.black,
-                              fontSize:
-                                  Get.height *
-                                      0.03,
-                              height: 1.4),
+                    AppTextCard(
+                      address: address,
+                      name: name,
+                      rating: rating,
+                      price: price,
                     ),
-                    Text(
-                      address,
-                      style: ThemeData()
-                          .textTheme
-                          .headline1!
-                          .copyWith(height: 1.2),
-                    ),
-                    Text(
-                      price,
-                      style: ThemeData()
-                          .textTheme
-                          .headline1!
-                          .copyWith(height: 1.2),
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.01,
-                    ),
-                    // rating of school
-                    Row(children: [
-                      Text(
-                        rating.toString(),
-                      ),
-                      SizedBox(
-                        width: Get.width * 0.01,
-                      ),
-                      const Icon(
-                          Ionicons.star_outline,
-                          color: Colors.yellow,
-                          size: 20),
-                    ]),
+                    AppCardImage(
+                      image: image,
+                    )
                   ],
                 ),
-              ), 
-              //add to favorite
-              Padding(
-                padding:
-                    const EdgeInsets.all(10.0),
-                child: IconButton(
-                  icon: const Icon(
-                    Ionicons.heart_outline,
-                    color: Colors.grey,
-                    size: 35,
-                  ),
-                  onPressed: () {
-                    print("favorite");
-                  },
+                SizedBox(
+                  height: Get.height * 0.02,
                 ),
-              )
-            ],
-          ),
-        ),
-      ),
+                Row(
+                   
+                  children: [
+                    AppButtonCard(
+                        color: Colors.transparent,
+                        textColor: Colors.black,
+                        bgColor:
+                            Colors.transparent,
+                        child: Text(
+                          "Location".tr,
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight:
+                                  FontWeight
+                                      .w500),
+                          textAlign:
+                              TextAlign.center,
+                        ),
+                        onPressed: () {}),
+                    AppButtonCard(
+                        color: AppColor.primary,
+                        textColor: Colors.white,
+                        bgColor: Colors.grey,
+                        child: Text(
+                          "Explore".tr,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight:
+                                  FontWeight
+                                      .w500),
+                          textAlign:
+                              TextAlign.center,
+                        ),
+                        onPressed: () {}),
+                      
+                  ],
+                ) , SizedBox(
+                          height: Get.width * 0.02,
+                      
+                        )
+              ],
+            ),
+          )),
     );
   }
 }

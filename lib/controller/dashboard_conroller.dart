@@ -8,7 +8,11 @@ abstract class DashboardController
 class DashboardControllerImp
     extends DashboardController {
   late int currentPage = 0;
+  
 
+
+@override
+   
   @override
   onItemTapped(index) {
     currentPage = index;

@@ -28,7 +28,9 @@ class HomeControllerImp  extends HomeController {
           phone: i['phone'],
           price: i['price'],
           rating: i['rating'],
-          students: i['students'],    
+          students: i['students'],   
+          city : i['city'], 
+          gender: i['gender']
         ));
      
        }

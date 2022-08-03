@@ -1,6 +1,5 @@
 import 'package:archdni/controller/home.controller.dart';
-import 'package:archdni/view/widget/home/card.dart';
-  import 'package:flutter/material.dart';
+   import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Test extends GetView<HomeController> {
@@ -8,8 +7,7 @@ class Test extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-   HomeControllerImp homeController = Get.put(HomeControllerImp());
-    return   const Scaffold(
+     return   const Scaffold(
       body: Center( ),
     );
   }

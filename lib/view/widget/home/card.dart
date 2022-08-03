@@ -1,5 +1,4 @@
-import 'package:archdni/controller/home.controller.dart';
-import 'package:archdni/controller/search_conroller.dart';
+ import 'package:archdni/controller/search_conroller.dart';
 import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/view/widget/home/card/cardbutton.dart';
 import 'package:archdni/view/widget/home/card/cardimage.dart';
@@ -11,14 +10,14 @@ class AppCard
     extends GetView<SearchControllerImp> {
   final String name;
   final String image;
-  final String address;
+  final String city;
   final double rating;
   final String price;
   final void Function()? onTap;
   const AppCard(
       this.name,
       this.image,
-      this.address,
+      this.city,
       this.rating,
       this.price,
       this.onTap,
@@ -26,8 +25,7 @@ class AppCard
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    HomeControllerImp homeController =
-        Get.put(HomeControllerImp());
+    
     return InkWell(
       onTap:  onTap ,
       child: Container(
@@ -54,7 +52,7 @@ class AppCard
                 Row(
                   children: [
                     AppTextCard(
-                      address: address,
+                     city: city ,
                       name: name,
                       rating: rating,
                       price: price,

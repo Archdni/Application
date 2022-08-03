@@ -34,7 +34,6 @@ class AppListSchool extends StatelessWidget {
                     itemBuilder:
                         (BuildContext context,
                             index) {
-                      print(index);
                       return Padding(
                         padding: const EdgeInsets
                                 .symmetric(
@@ -43,7 +42,7 @@ class AppListSchool extends StatelessWidget {
                         child: AppCard(
                             data[index].name!,
                             data[index].imageUrl!,
-                            data[index].location!,
+                            data[index].city!,
                             data[index].rating!,
                             data[index].price!,
                             () {
@@ -52,7 +51,7 @@ class AppListSchool extends StatelessWidget {
                               data[index];
 
                           Get.to(
-                            const School(),
+                            () => const School(),
                             routeName: '/school',
                             transition: Transition
                                 .downToUp,

@@ -65,7 +65,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
 
   void activitypin() async {
     activityIcon = await BitmapDescriptor.fromAssetImage(
-        const ImageConfiguration(devicePixelRatio: 2.5), 'assets/activity.png');
+        const ImageConfiguration(devicePixelRatio: 2.5), 'assets/images/mosque.png');
   }
 
   _getCurrentLocation() async {

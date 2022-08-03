@@ -1,9 +1,7 @@
 import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/core/services/services.dart';
 import 'package:archdni/localization/transilation.dart';
-import 'package:archdni/root.dart';
-import 'package:archdni/test.dart';
-import 'package:archdni/view/screens/dashboard.dart';
+import 'package:archdni/root.dart'; 
 import 'package:archdni/view/screens/language.dart';
  import 'package:archdni/view/widget/language/changelocal.dart';
 import 'package:flutter/material.dart';

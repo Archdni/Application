@@ -4,15 +4,15 @@ import 'package:ionicons/ionicons.dart';
 
 class AppTextCard extends StatelessWidget {
   final String name;
-  final String address;
+  final String city;
   final double rating;
   final String price;
   const AppTextCard(
       {Key? key,
       required this.name,
-      required this.address,
       required this.rating,
-      required this.price})
+      required this.price,
+      required this.city})
       : super(key: key);
 
   @override
@@ -23,11 +23,11 @@ class AppTextCard extends StatelessWidget {
           crossAxisAlignment:
               CrossAxisAlignment.start,
           children: [
-            Text(  name,
+            Text(name,
                 style: TextStyle(
                     fontSize: Get.height * 0.03,
                     fontWeight: FontWeight.w400)),
-            Text("${"address :".tr} $address",
+            Text("${"address :".tr} $city",
                 style: TextStyle(
                     fontSize: Get.height * 0.022,
                     fontWeight: FontWeight.w400)),
@@ -35,25 +35,25 @@ class AppTextCard extends StatelessWidget {
                 style: TextStyle(
                     fontSize: Get.height * 0.022,
                     fontWeight: FontWeight.w400)),
-             Row(
+            Row(
               children: [
                 Text(
-                   "rating :".tr ,
+                  "rating :".tr,
                   style: TextStyle(
                       fontSize:
                           Get.height * 0.024,
                       fontWeight:
                           FontWeight.w500),
                 ),
-              const   Icon(Ionicons.star_outline,
-                    color:    Color.fromARGB(
+                const Icon(Ionicons.star_outline,
+                    color: Color.fromARGB(
                         255, 220, 184, 25),
-                    size:  20),
+                    size: 20),
                 SizedBox(
                   width: Get.height * 0.005,
                 ),
                 Text(
-                    rating.toString(),
+                  rating.toString(),
                   style: TextStyle(
                       fontSize:
                           Get.height * 0.024,
@@ -62,8 +62,6 @@ class AppTextCard extends StatelessWidget {
                 ),
               ],
             ),
-
-            
           ],
         ));
   }

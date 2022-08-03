@@ -1,3 +1,4 @@
+import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:get/get.dart';
 
 abstract class SchoolController
@@ -5,13 +6,7 @@ abstract class SchoolController
 
 class SchoolControllerImp
     extends SchoolController {
-  late String? name;
-
-  @override
-  void onInit() {
-     
-    name = Get.arguments;
-      
-    super.onInit();
-  }
+   
+late  SchoolModel   school   ;
+  
 }

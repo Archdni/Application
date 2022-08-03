@@ -1,8 +1,8 @@
-import 'package:archdni/controller/search_conroller.dart';
+ import 'package:archdni/controller/search_conroller.dart';
 import 'package:archdni/core/constant/color.dart';
-import 'package:archdni/view/widget/home/cardbutton.dart';
-import 'package:archdni/view/widget/home/cardimage.dart';
-import 'package:archdni/view/widget/home/cardtext.dart';
+import 'package:archdni/view/widget/home/card/cardbutton.dart';
+import 'package:archdni/view/widget/home/card/cardimage.dart';
+import 'package:archdni/view/widget/home/card/cardtext.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,22 +10,24 @@ class AppCard
     extends GetView<SearchControllerImp> {
   final String name;
   final String image;
-  final String address;
+  final String city;
   final double rating;
   final String price;
-  const AppCard(this.name, this.image,
-      this.address, this.rating, this.price,
+  final void Function()? onTap;
+  const AppCard(
+      this.name,
+      this.image,
+      this.city,
+      this.rating,
+      this.price,
+      this.onTap,
       {Key? key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-
+    
     return InkWell(
-      onTap: () => {
-        Get.toNamed('/school', arguments: name , ) ,
-        
-     
-      },
+      onTap:  onTap ,
       child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -50,7 +52,7 @@ class AppCard
                 Row(
                   children: [
                     AppTextCard(
-                      address: address,
+                     city: city ,
                       name: name,
                       rating: rating,
                       price: price,
@@ -64,7 +66,6 @@ class AppCard
                   height: Get.height * 0.02,
                 ),
                 Row(
-                   
                   children: [
                     AppButtonCard(
                         color: Colors.transparent,
@@ -97,12 +98,11 @@ class AppCard
                               TextAlign.center,
                         ),
                         onPressed: () {}),
-                      
                   ],
-                ) , SizedBox(
-                          height: Get.width * 0.02,
-                      
-                        )
+                ),
+                SizedBox(
+                  height: Get.width * 0.02,
+                )
               ],
             ),
           )),

@@ -3,8 +3,9 @@ import 'package:archdni/core/services/services.dart';
 import 'package:archdni/localization/transilation.dart';
 import 'package:archdni/root.dart';
 import 'package:archdni/test.dart';
- import 'package:archdni/view/screens/language.dart';
-import 'package:archdni/view/widget/language/changelocal.dart';
+import 'package:archdni/view/screens/dashboard.dart';
+import 'package:archdni/view/screens/language.dart';
+ import 'package:archdni/view/widget/language/changelocal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // ignore: depend_on_referenced_packages
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Language(),
+      home:   const Language (),
       routes: routes,
     );
   }

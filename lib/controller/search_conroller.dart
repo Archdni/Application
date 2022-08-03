@@ -1,47 +1,32 @@
-// ignore_for_file: annotate_overrides
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:archdni/data/datasource/firebasedata.dart';
-import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:get/get.dart';
 
 abstract class SearchController
     extends GetxController {
-  List foundSchool = [];
-
-  onInit();
-
-  filterSchool(String name);
-  
+  getData();
 }
 
 class SearchControllerImp
     extends SearchController {
-  late int len = foundSchool.length;
-  List<SchoolModel> results = [];
-   
-
-
-
+  CollectionReference schools = FirebaseFirestore
+      .instance
+      .collection('schools');
+  late List data = [];
   @override
   void onInit() {
-    foundSchool = [];
-      super.onInit();
+   getData();  
+    super.onInit();
   }
-
-  
-  void filterSchool(String name) {
-    if (name.isEmpty) {
-      results = listSchools;
-    } else {
-      results = listSchools
-          .where((element) => element.name
-              .toString()
-              .toLowerCase()
-              .contains(name.toLowerCase()))
-          .toList();
-    }
-    foundSchool = results;
+        
+  @override
+  getData() async {
+      data.clear(); 
+    await  schools.get().then((value) {
+      for (var element in value.docs) {
+        data.addIf(!   (data.contains(element.data())) , element.data());
+      }
+    });
+     
     update();
-  }
+   }
 }

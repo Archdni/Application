@@ -1,6 +1,6 @@
 import 'package:archdni/controller/home.controller.dart';
+import 'package:archdni/view/widget/home/listeofschool.dart';
 import 'package:archdni/view/widget/home/profailicon.dart';
-import 'package:archdni/view/widget/home/search.dart';
 import 'package:archdni/view/widget/home/text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,8 +43,18 @@ class Home extends GetView<HomeController> {
                 color: Colors.grey,
                 thickness: 0.3,
               ),
+              Row(
+                children: [
+                  Text("finde Qurani schools".tr,
+                      style: TextStyle(
+                          fontSize:
+                              Get.height * 0.03,
+                          fontWeight:
+                              FontWeight.w400)),
+                ],
+              ),
               const Expanded(
-                  child: AppSearchHome())
+                  child: AppListSchool())
             ],
           ),
         ),

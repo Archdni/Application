@@ -1,8 +1,7 @@
 import 'package:archdni/view/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart';
-
+ 
 List<BottomNavigationBarItem> bottomBarItems = [
   BottomNavigationBarItem(
     icon: const Icon(Icons.home),

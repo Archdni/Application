@@ -1,7 +1,8 @@
 import 'package:archdni/view/screens/home.dart';
+import 'package:archdni/view/screens/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- 
+
 List<BottomNavigationBarItem> bottomBarItems = [
   BottomNavigationBarItem(
     icon: const Icon(Icons.home),
@@ -23,9 +24,7 @@ List<BottomNavigationBarItem> bottomBarItems = [
 
 List<Widget> widgetOptions = <Widget>[
   const Home(),
-  const Text(
-    'Index 1: Business',
-  ),
+  const MapPage(),
   const Text(
     'Index 2: Business',
   ),
@@ -33,4 +32,3 @@ List<Widget> widgetOptions = <Widget>[
     'Index 3: Settings',
   ),
 ];
- 

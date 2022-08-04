@@ -2,24 +2,23 @@ import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
-abstract class HomeController extends GetxController {
+abstract class HomeController
+    extends GetxController {
   var isLoading = true;
   var wordList = <SchoolModel>[];
-getData();
- 
- }
+  getData();
+}
 
-class HomeControllerImp  extends HomeController {
-  
-  
+class HomeControllerImp extends HomeController {
   @override
-   Future<void> getData() async {
-    
-    try{
-     
-      QuerySnapshot words = await FirebaseFirestore.instance.collection('schools').get() ;
-     wordList.clear();  
-      for( var i in words.docs){
+  Future<void> getData() async {
+    try {
+      QuerySnapshot words =
+          await FirebaseFirestore.instance
+              .collection('schools')
+              .get();
+      wordList.clear();
+      for (var i in words.docs) {
         wordList.add(SchoolModel(
           name: i['name'],
           location: i['address'],
@@ -28,26 +27,23 @@ class HomeControllerImp  extends HomeController {
           phone: i['phone'],
           price: i['price'],
           rating: i['rating'],
-          students: i['students'],   
-          city : i['city'], 
-          gender: i['gender']
+          students: i['students'],
+          city: i['city'],
+          gender: i['gender'],
+          latitude: i["latitude"],
+          longitude: i["longitude"],
         ));
-     
-       }
+      }
       isLoading = false;
-      
-     } catch(e) {
+    } catch (e) {
       Get.snackbar('Error', e.toString());
     }
     update();
-  }   
+  }
+
   @override
-  void onInit()   {
-     getData();
-     super.onInit();
-    
-  } 
+  void onInit() {
+    getData();
+    super.onInit();
+  }
 }
-  
-          
- 

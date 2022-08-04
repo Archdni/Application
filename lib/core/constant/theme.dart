@@ -28,7 +28,7 @@ class Dirtheme {
           fontSize: 14,
           fontWeight: FontWeight.w500,
           letterSpacing: 0.1,
-          color:  AppColor.ghostwhite,
+          color:  AppColor.ghostwhite,),
       bodyText1: GoogleFonts.openSans(
           fontSize: 16,
           fontWeight: FontWeight.w400,

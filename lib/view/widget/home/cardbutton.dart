@@ -28,7 +28,7 @@ class AppButtonCard extends StatelessWidget {
             borderRadius:
                 BorderRadius.circular(10),
             border: Border.all(
-                color: AppColor.primary,
+                color: AppColor.bluecell,
                 width: 1),
             boxShadow: [
               BoxShadow(

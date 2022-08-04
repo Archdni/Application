@@ -83,7 +83,7 @@ class AppCard
                         ),
                         onPressed: () {}),
                     AppButtonCard(
-                        color: AppColor.primary,
+                        color: AppColor.bluecell,
                         textColor: Colors.white,
                         bgColor: Colors.grey,
                         child: Text(

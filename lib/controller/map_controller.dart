@@ -1,3 +1,4 @@
+import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 
@@ -15,37 +16,53 @@ class SchoolViewModel{
   final SchoolModel school;
   SchoolViewModel({required this.school});
 
-  String get name {
+  String? get name {
     return school.name; 
   }
 
-  String get location {
-    return school.location; 
+  String? get address {
+    return school.address; 
   }
 
-  String get imageUrl {
+  String? get imageUrl {
     return school.imageUrl; 
   }
 
-  String get description {
+  String? get description {
     return school.description; 
   }
 
-  String get phone {
+  String? get phone {
     return school.phone; 
   }
 
 
-  double get rating {
+  double? get rating {
     return school.rating; 
   }
 
-  String get price {
+  String? get price {
     return school.price; 
   }
 
-  int get students {
+  int? get students {
     return school.students;
+  }
+
+  String? get city {
+    return school.city; 
+  }
+
+  String? get gender {
+    return school.gender; 
+  }
+
+  double get latitude {
+    return school.latitude; 
+  }
+
+  double get longitude {
+    return school.longitude; 
   }
 
 }

@@ -41,7 +41,7 @@ class AppListSchool
                         child: AppCard(
                             data[index].name!,
                             data[index].imageUrl!,
-                            data[index].location!,
+                            data[index].address!,
                             data[index].rating!,
                             data[index].price!),
                       );

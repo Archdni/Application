@@ -5,47 +5,42 @@ import 'package:get/get.dart';
 abstract class HomeController extends GetxController {
   var isLoading = true;
   var wordList = <SchoolModel>[];
-getData();
- 
- }
+  getData();
+}
 
-class HomeControllerImp  extends HomeController {
-  
-  
+class HomeControllerImp extends HomeController {
   @override
-   Future<void> getData() async {
-    
-    try{
-     
-      QuerySnapshot words = await FirebaseFirestore.instance.collection('schools').get() ;
-     wordList.clear();  
-      for( var i in words.docs){
+  Future<void> getData() async {
+    try {
+      QuerySnapshot words =
+          await FirebaseFirestore.instance.collection('schools').get();
+      wordList.clear();
+      for (var i in words.docs) {
         wordList.add(SchoolModel(
           name: i['name'],
-          location: i['address'],
+          address: i['address'],
           description: i['description'],
           imageUrl: i['image'],
           phone: i['phone'],
           price: i['price'],
           rating: i['rating'],
-          students: i['students'],    
+          students: i['students'],
+          gender: i["gender"],
+          city: i["city"],
+          latitude: i['latitude'],
+          longitude: i['longitude'],
         ));
-     
-       }
+      }
       isLoading = false;
-      
-     } catch(e) {
+    } catch (e) {
       Get.snackbar('Error', e.toString());
     }
     update();
-  }   
+  }
+
   @override
-  void onInit()   {
-     getData();
-     super.onInit();
-    
-  } 
+  void onInit() {
+    getData();
+    super.onInit();
+  }
 }
-  
-          
- 

@@ -48,6 +48,8 @@ dev_dependencies:
 
 
   flutter_lints: ^2.0.0
+  # font
+  google_fonts: 2.2.0
   # DateTime
   jiffy: ^5.0.0
   intl: ^0.17.0

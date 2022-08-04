@@ -44,9 +44,9 @@ class _ArchedniMapState extends State<ArchedniMap> {
   }
 
 
-  void _activityMarkers(SchoolListViewModel school) {
+  void _activityMarkers(SchoolViewModel school) {
     var markerIdVal = school.name;
-    final MarkerId markerId = MarkerId(markerIdVal);
+    final MarkerId markerId = MarkerId(markerIdVal!);
 
     // creating a new MARKER
     // debugPrint(school.latitude.toString());
@@ -148,7 +148,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
                   children: <Widget>[
                     ClipOval(
                       child: Material(
-                        color: AppColor.bluecell // button color
+                        color: AppColor.bluecell ,// button color
                         child: InkWell(
                           splashColor: Colors.blue, // inkwell color
                           child: const SizedBox(
@@ -167,7 +167,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
                     const SizedBox(height: 20),
                     ClipOval(
                       child: Material(
-                        color: AppColor.bluecell // button color
+                        color: AppColor.bluecell, // button color
                         child: InkWell(
                           splashColor: Colors.blue, // inkwell color
                           child: const SizedBox(
@@ -194,9 +194,9 @@ class _ArchedniMapState extends State<ArchedniMap> {
                   padding: const EdgeInsets.only(right: 10.0, bottom: 90.0),
                   child: ClipOval(
                     child: Material(
-                      color: AppColor.bluecell // button color
+                      color: AppColor.bluecell ,// button color
                       child: InkWell(
-                        splashColor: AppColor.skygrey // inkwell color
+                        splashColor: AppColor.skygrey, // inkwell color
                         child: const SizedBox(
                           width: 50,
                           height: 50,

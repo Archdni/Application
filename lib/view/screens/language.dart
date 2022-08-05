@@ -30,14 +30,14 @@ class Language extends GetView<LocaleController> {
                   textbutton: "AR",
                   onPressed: (() {
                     controller.changeLang("ar");
-                    Get.offNamed(AppRoutes.home);
+                    Get.offNamed(AppRoutes.onbording);
                   }),
                 ),
                 AppCustomButtonLang(
                   textbutton: "EN",
                   onPressed: (() {
                     controller.changeLang("en");
-                    Get.offNamed(AppRoutes.home);
+                    Get.offNamed(AppRoutes.onbording);
                   }),
                 ),
               ],

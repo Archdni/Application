@@ -9,12 +9,11 @@ class AppProfaileIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-       
       child: Container(
         margin: const EdgeInsets.symmetric(
             vertical: 5, horizontal: 5),
-        height: 45,
-        width: 45,
+        height: 30,
+        width: 30,
         decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -24,7 +23,7 @@ class AppProfaileIcon extends StatelessWidget {
             ),
           ],
           borderRadius: BorderRadius.all(
-              Radius.circular(22.5)),
+              Radius.circular(16)),
           image: DecorationImage(
             image: AssetImage(
                 'assets/images/Avatar.jpg'),

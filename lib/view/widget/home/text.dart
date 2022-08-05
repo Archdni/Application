@@ -7,40 +7,34 @@ class AppHomaText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-              children: [
-                Text(
-                  "${"Hello".tr} Ahmad",
-                  style: ThemeData()
-                      .textTheme
-                      .bodyText1!
-                      .copyWith(
-                        fontSize:
-                            Get.height * 0.04,
-                        fontWeight:
-                            FontWeight.w400,
-                      ),
-                )
-              ],
-            ),
-            
-            Row(
-              children: [
-                Text(
-                  "Welcome to Archdni , browse and discover the best Quran school.".tr,
-                  style: ThemeData()
-                      .textTheme
-                      .bodyText1!
-                      .copyWith(
-                        fontSize:
-                            Get.height * 0.022,
-                            height: 1.7,
-                              
-                          color: Colors.grey),
-                )
-              ],
-            )
+        Text(
+          "${"Hello".tr} محمد",
+          softWrap: true,
+           
+          style: ThemeData()
+              .textTheme
+              .bodyText1!
+              .copyWith(
+                fontSize: Get.height * 0.04,
+                fontWeight: FontWeight.w400,
+              ),
+        ),
+        Text(
+          "Welcome to Archdni , browse and discover the best Quran school."
+              .tr,
+          softWrap: true,
+          maxLines: 2,
+          overflow: TextOverflow.fade,
+          style: ThemeData()
+              .textTheme
+              .bodyText1!
+              .copyWith(
+                  fontSize: Get.height * 0.020,
+                  height: 1.7,
+                  color: Colors.grey),
+        )
       ],
     );
   }

@@ -1,47 +1,56 @@
 import 'package:archdni/core/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AppButtonCard extends StatelessWidget {
-  final Widget child;
   final void Function() onPressed;
-  final Color color;
-  final Color textColor;
-  final Color bgColor;
   const AppButtonCard({
     Key? key,
-    required this.child,
     required this.onPressed,
-    required this.color,
-    required this.textColor,
-    required this.bgColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      padding: const EdgeInsets.only(left: 8, right: 8),
         onPressed: onPressed,
         child: Container(
-          height: 45,
+          height: 47,
           width: 100,
+           margin:const EdgeInsets.only(
+            top: 9,
+            
+            ),
           decoration: BoxDecoration(
-            color: color,
+            color: AppColor.primary,
             borderRadius:
-                BorderRadius.circular(10),
-            border: Border.all(
-                color: AppColor.primary,
-                width: 1),
+              const  BorderRadius.only(
+                  topRight: Radius.circular(15),
+                   
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15)
+                ),
+             
             boxShadow: [
               BoxShadow(
-                color: bgColor,
+                color: AppColor.primary
+                    .withOpacity(0.1),
                 spreadRadius: 1,
                 blurRadius: 4,
                 offset: const Offset(0, 3),
               ),
             ],
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: child,
+          child:  Padding(
+            padding:const EdgeInsets.all(12.0),
+            child: Text(
+              'Explore'.tr,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 18,
+                color: AppColor.light,
+              ),
+            ),
           ),
         ));
   }

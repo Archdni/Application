@@ -1,3 +1,4 @@
+import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/view/widget/map/mapform.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,8 @@ class MapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
+
+           appBar: AppBar(
             backgroundColor: Colors.white,
             centerTitle: true,
             leading: IconButton(
@@ -34,15 +36,17 @@ class MapPage extends StatelessWidget {
           floatingActionButtonLocation:
               FloatingActionButtonLocation
                   .endFloat,
+                  
           floatingActionButton:
               FloatingActionButton(
+                backgroundColor: AppColor.primary,
             onPressed: () {},
             child: const Icon(
                 Icons.my_location_outlined),
           ),
           body: AppMap(
-            latitude: latitude,
-            longitude: longitude,
+            latitude: latitude!,
+            longitude: longitude!,
           )),
     );
   }

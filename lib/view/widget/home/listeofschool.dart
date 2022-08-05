@@ -41,6 +41,7 @@ class AppListSchool extends StatelessWidget {
                           latitude: data[index].latitude!,
                           longitude: data[index].longitude!,
                           name: data[index].name!,
+                          student: data[index].students!,
                           image: data[index]
                               .imageUrl!,
                           city: data[index].city!,
@@ -53,6 +54,8 @@ class AppListSchool extends StatelessWidget {
                             Get.to(
                               () => School(
                                 index: index,
+                              
+                              
                               ),
                               routeName:
                                   '/school',

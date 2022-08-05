@@ -12,9 +12,13 @@ import 'package:ionicons/ionicons.dart';
 import 'package:latlong2/latlong.dart';
 
 class AppMap extends StatelessWidget {
-   final double? latitude;
+  final double? latitude;
   final double? longitude;
-  const AppMap({Key? key, required this.latitude, required this.longitude}) : super(key: key);
+  const AppMap(
+      {Key? key,
+      required this.latitude,
+      required this.longitude})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class AppMap extends StatelessWidget {
 
     return FlutterMap(
       options: MapOptions(
-        center: LatLng( latitude!, longitude! 
+        center: LatLng(latitude!, longitude!
             //locationController.latitude!,
             //locationController.longitude!
             ),
@@ -58,7 +62,19 @@ class AppMap extends StatelessWidget {
                       data[index].latitude!,
                       data[index].longitude!),
                   builder: (ctx) {
-                    return IconButton(
+                    return InkWell(
+                      child: SizedBox(
+                        height: 20.0,
+                        width: 20.0,
+                        child: Image.asset(
+                          'assets/images/mosque.png',
+                          height: 20,
+                          width: 20,
+                        ),
+                      ),
+                    )
+
+                        /*IconButton(
                       icon: const Icon(
                         Ionicons.location,
                         color: Colors.teal,
@@ -71,7 +87,8 @@ class AppMap extends StatelessWidget {
                               return   AppMapCartInfo(index: index,);
                             });
                       },
-                    );
+                    )*/
+                        ;
                   },
                 );
               }, growable: true) +

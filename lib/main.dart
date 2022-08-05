@@ -5,6 +5,7 @@ import 'package:archdni/core/services/services.dart';
 import 'package:archdni/localization/transilation.dart';
 import 'package:archdni/root.dart';
  import 'package:archdni/view/screens/language.dart';
+import 'package:archdni/view/screens/onbording.dart';
 import 'package:archdni/view/widget/language/changelocal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

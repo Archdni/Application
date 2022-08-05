@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AppDetaillesMap extends StatelessWidget {
-  final int index;
+  final int ? index;
   const AppDetaillesMap(
       {Key? key, required this.index})
       : super(key: key);
@@ -22,7 +22,7 @@ class AppDetaillesMap extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            data[index].name!,
+            data[index!].name!,
             style: const TextStyle(fontSize: 24),
           ),
           ListTile(
@@ -30,21 +30,21 @@ class AppDetaillesMap extends StatelessWidget {
               Icons.location_on,
               color: Colors.black,
             ),
-            title: Text(data[index].location!),
+            title: Text(data[index!].location!),
           ),
           ListTile(
             leading: const Icon(
               Icons.phone,
               color: Colors.black,
             ),
-            title: Text(data[index].phone!),
+            title: Text(data[index!].phone!),
           ),
           ListTile(
             leading: const Icon(
               Icons.email,
               color: Colors.black,
             ),
-            title: Text(data[index].email!),
+            title: Text(data[index!].email!),
           ),
           ListTile(
             leading: const Icon(
@@ -52,7 +52,7 @@ class AppDetaillesMap extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-                data[index].rating!.toString()),
+                data[index!].rating!.toString()),
           ),
           ListTile(
             leading: const Icon(
@@ -60,13 +60,14 @@ class AppDetaillesMap extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-                data[index].price!.toString()),
+                data[index!].price!.toString()),
           ),
           AppSchoolButton(
             onPressed: () {
               Get.to(
                 () => School(
-                  index: index,
+                  index: index!,
+                  
                 ),
                 routeName: '/school',
                 transition: Transition.downToUp,

@@ -1,4 +1,5 @@
 import 'package:archdni/controller/home.controller.dart';
+import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/view/widget/home/listeofschool.dart';
 import 'package:archdni/view/widget/home/profailicon.dart';
 import 'package:archdni/view/widget/home/text.dart';
@@ -22,37 +23,25 @@ class Home extends GetView<HomeController> {
             actions: [
               IconButton(
                 icon: const Icon(
-                  Ionicons.heart_outline,
+                  Ionicons.reorder_three_outline,
                   size: 30,
-                  color: Colors.black,
+                  color: AppColor.primary,
                 ),
                 onPressed: () {},
               ),
             ]),
         body: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: Get.height * 0.03,
-              vertical: Get.height * 0.02),
+              horizontal: Get.width * 0.02,
+              vertical: Get.height * 0.005),
           child: Column(
             children: [
               const AppHomaText(),
               SizedBox(
-                height: Get.height * 0.02,
+                height: Get.height * 0.05,
               ),
-              const Divider(
-                color: Colors.grey,
-                thickness: 0.3,
-              ),
-              Row(
-                children: [
-                  Text("finde Qurani schools".tr,
-                      style: TextStyle(
-                          fontSize:
-                              Get.height * 0.03,
-                          fontWeight:
-                              FontWeight.w400)),
-                ],
-              ),
+            
+              
               const Expanded(
                   child: AppListSchool())
             ],

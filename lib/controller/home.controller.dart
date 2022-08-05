@@ -32,6 +32,7 @@ class HomeControllerImp extends HomeController {
           gender: i['gender'],
           latitude: i["latitude"],
           longitude: i["longitude"],
+          email: i["email"],
         ));
       }
       isLoading = false;

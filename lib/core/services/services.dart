@@ -1,6 +1,7 @@
-// ignore: depend_on_referenced_packages
- import 'package:shared_preferences/shared_preferences.dart';
-  import 'package:get/get.dart';
+// ignore_for_file: depend_on_referenced_packages
+
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get/get.dart';
 
 class MyServices extends GetxService {
   late SharedPreferences sharedPreferences;
@@ -8,7 +9,6 @@ class MyServices extends GetxService {
     sharedPreferences =
         await SharedPreferences.getInstance();
 
-    
     return this;
   }
 }

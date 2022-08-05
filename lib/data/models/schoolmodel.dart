@@ -11,9 +11,10 @@ class SchoolModel {
   final int? students;
   final double? latitude;
   final double? longitude;
+  final String? email;
 
   SchoolModel(
-      {
+      {this.email,
       this.latitude,
       this.longitude,
       this.name,

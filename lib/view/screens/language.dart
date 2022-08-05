@@ -1,4 +1,4 @@
-import 'package:archdni/core/constant/routs.dart';
+ import 'package:archdni/core/constant/routs.dart';
 import 'package:archdni/view/widget/language/changelocal.dart';
 import 'package:archdni/view/widget/language/custombutton.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +6,11 @@ import 'package:get/get.dart';
 
 class Language extends GetView<LocaleController> {
   const Language({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+
+    
+ 
     return Scaffold(
       body: Center(
         child: Container(

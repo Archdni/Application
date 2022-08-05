@@ -22,6 +22,7 @@ class AppTranslations extends Translations {
           "rating :": "التقييم:",
           "number of students :": "عدد الطلاب :",
           'connect with us': 'تواصل معنا',
+          "explore_nearby": "استكشف المدارس القرآنية القريبة",
         },
         "en": {
           "lantitel": "Choose Your Language",
@@ -43,6 +44,8 @@ class AppTranslations extends Translations {
           "number of students :":
               "N° of students :",
           'connect with us': 'Connect',
+          "explore_nearby": "Explore nearby Quran schools",
+
         }
       };
 }

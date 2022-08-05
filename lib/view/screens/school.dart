@@ -1,5 +1,7 @@
-import 'package:archdni/controller/school_controller.dart';
+import 'package:archdni/controller/home.controller.dart';
 import 'package:archdni/data/models/schoolmodel.dart';
+import 'package:archdni/view/screens/map.dart';
+import 'package:archdni/view/widget/map/mapform.dart';
 import 'package:archdni/view/widget/school/schoolbody.dart';
 import 'package:archdni/view/widget/school/schoolbutton.dart';
 import 'package:archdni/view/widget/school/schoolimg.dart';
@@ -8,13 +10,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class School extends StatelessWidget {
-  const School({Key? key}) : super(key: key);
+  final int index;
+  const School({Key? key, required this.index})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SchoolControllerImp controller =
-        Get.put(SchoolControllerImp());
-    late SchoolModel school = controller.school;
+    HomeControllerImp controller =
+        Get.put(HomeControllerImp());
+    late List<SchoolModel> school =
+        controller.wordList;
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: true,
@@ -26,25 +31,29 @@ class School extends StatelessWidget {
           elevation: 0,
         ),
         body: Column(children: [
-          AppSchoolImag(image: school.imageUrl!),
+          AppSchoolImag(
+              image: school[index].imageUrl!),
           Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: 15, vertical: 10),
             child: Column(
               children: [
                 AppSchoolTitel(
-                  name: school.name!,
-                  rating:
-                      school.rating!.toString(),
+                  name: school[index].name!,
+                  rating: school[index]
+                      .rating!
+                      .toString(),
                 ),
                 AppSchoolBody(
-                    location: school.location!,
-                    description:
-                        school.description!,
-                    price: school.price!,
-                    students: school.students!
+                    location:
+                        school[index].location!,
+                    description: school[index]
+                        .description!,
+                    price: school[index].price!,
+                    students: school[index]
+                        .students!
                         .toString(),
-                    gender: school.gender!)
+                    gender: school[index].gender!)
               ],
             ),
           ),
@@ -57,7 +66,6 @@ class School extends StatelessWidget {
             children: [
               AppSchoolButton(
                   color: Colors.transparent,
-               
                   bgColor: Colors.transparent,
                   child: Text(
                     "Location".tr,
@@ -68,10 +76,23 @@ class School extends StatelessWidget {
                             FontWeight.w500),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () {}),
+                  onPressed: () {
+                    Get.to(
+                      () => MapPage(
+                        latitude: school[index]
+                            .latitude,
+                        longitude: school[index]
+                            .longitude,
+                      ),
+                      routeName: '/AppMap',
+                      transition:
+                          Transition.downToUp,
+                      duration: const Duration(
+                          milliseconds: 300),
+                    );
+                  }),
               AppSchoolButton(
                   color: Colors.black,
-                
                   bgColor: Colors.grey,
                   child: Text(
                     "connect with us".tr,

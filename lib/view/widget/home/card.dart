@@ -1,5 +1,7 @@
- import 'package:archdni/controller/search_conroller.dart';
+import 'package:archdni/controller/search_conroller.dart';
 import 'package:archdni/core/constant/color.dart';
+import 'package:archdni/view/screens/map.dart';
+import 'package:archdni/view/screens/school.dart';
 import 'package:archdni/view/widget/home/card/cardbutton.dart';
 import 'package:archdni/view/widget/home/card/cardimage.dart';
 import 'package:archdni/view/widget/home/card/cardtext.dart';
@@ -8,26 +10,31 @@ import 'package:get/get.dart';
 
 class AppCard
     extends GetView<SearchControllerImp> {
-  final String name;
-  final String image;
-  final String city;
-  final double rating;
-  final String price;
+  final int? index;
+  final String? name;
+  final String? image;
+  final String? city;
+  final double? rating;
+  final String? price;
+  final double? latitude;
+  final double? longitude;
   final void Function()? onTap;
   const AppCard(
+      {this.latitude,
+      this.longitude,
+      this.index,
       this.name,
       this.image,
       this.city,
       this.rating,
       this.price,
       this.onTap,
-      {Key? key})
+      Key? key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    
     return InkWell(
-      onTap:  onTap ,
+      onTap: onTap,
       child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -52,13 +59,13 @@ class AppCard
                 Row(
                   children: [
                     AppTextCard(
-                     city: city ,
-                      name: name,
-                      rating: rating,
-                      price: price,
+                      city: city!,
+                      name: name!,
+                      rating: rating!,
+                      price: price!,
                     ),
                     AppCardImage(
-                      image: image,
+                      image: image!,
                     )
                   ],
                 ),
@@ -82,7 +89,22 @@ class AppCard
                           textAlign:
                               TextAlign.center,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Get.to(
+                            () => MapPage(
+                              latitude: latitude,
+                              longitude:
+                                  longitude,
+                            ),
+                            routeName: '/AppMap',
+                            transition: Transition
+                                .downToUp,
+                            duration:
+                                const Duration(
+                                    milliseconds:
+                                        300),
+                          );
+                        }),
                     AppButtonCard(
                         color: AppColor.primary,
                         textColor: Colors.white,
@@ -97,7 +119,20 @@ class AppCard
                           textAlign:
                               TextAlign.center,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Get.to(
+                            () => School(
+                              index: index!,
+                            ),
+                            routeName: '/school',
+                            transition: Transition
+                                .downToUp,
+                            duration:
+                                const Duration(
+                                    milliseconds:
+                                        300),
+                          );
+                        }),
                   ],
                 ),
                 SizedBox(

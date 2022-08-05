@@ -1,8 +1,11 @@
+import 'package:archdni/controller/locatio_controller.dart';
 import 'package:archdni/view/screens/home.dart';
 import 'package:archdni/view/screens/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+LocationControllerImp controller =
+    Get.put(LocationControllerImp());
 List<BottomNavigationBarItem> bottomBarItems = [
   BottomNavigationBarItem(
     icon: const Icon(Icons.home),
@@ -24,7 +27,9 @@ List<BottomNavigationBarItem> bottomBarItems = [
 
 List<Widget> widgetOptions = <Widget>[
   const Home(),
-  const MapPage(),
+  MapPage(
+      latitude: controller.latitude,
+      longitude: controller.longitude),
   const Text(
     'Index 2: Business',
   ),

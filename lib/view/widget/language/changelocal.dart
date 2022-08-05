@@ -1,3 +1,6 @@
+// ignore_for_file: unused_local_variable
+
+import 'package:archdni/controller/locatio_controller.dart';
 import 'package:archdni/core/services/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -16,6 +19,7 @@ class LocaleController extends GetxController {
 
   @override
   void onInit() {
+    LocationControllerImp locationController = Get.put(LocationControllerImp());
     String? sharedPrefLang = myServices
         .sharedPreferences
         .getString("lang");

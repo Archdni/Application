@@ -1,29 +1,34 @@
- import 'package:archdni/view/widget/map/map.dart';
+import 'package:archdni/view/widget/map/mapform.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MapPage extends StatelessWidget {
-  const MapPage({Key? key}) : super(key: key);
+  final double? latitude;
+  final double? longitude;
+  const MapPage(
+      {Key? key,
+      required this.latitude,
+      required this.longitude})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
             centerTitle: true,
-            title: const Text(
-              'Test',
-              style:
-                  TextStyle(color: Colors.black),
-            ),
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back,
-                  color: Colors.black),
+              icon: const Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () {
                 Get.back();
               },
+            ),
+            title: Text(
+              'explore_nearby'.tr,
+              style: const TextStyle(
+                  color: Colors.black),
+                  
             ),
           ),
           floatingActionButtonLocation:
@@ -35,7 +40,10 @@ class MapPage extends StatelessWidget {
             child: const Icon(
                 Icons.my_location_outlined),
           ),
-          body: const AppMap()),
+          body: AppMap(
+            latitude: latitude,
+            longitude: longitude,
+          )),
     );
   }
 }

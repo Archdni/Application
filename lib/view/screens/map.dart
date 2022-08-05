@@ -34,10 +34,11 @@ class _ArchedniMapState extends State<ArchedniMap> {
   final SchoolListViewModel _activitieslistVM = SchoolListViewModel();
 
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
-  String googleAPiKey = "";
+  String googleAPiKey = "AIzaSyDtuuIp45SkI3_267fP5EMD1LVoNQs400M";
 
   _getMarkersactivity() async {
     final activity = await _activitieslistVM.getAllActvities(widget.cityname);
+    debugPrint(activity.toString());
     for (int i = 0; i < activity.length; i++) {
       _activityMarkers(activity[i]);
     }
@@ -49,7 +50,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
     final MarkerId markerId = MarkerId(markerIdVal!);
 
     // creating a new MARKER
-    // debugPrint(school.latitude.toString());
+     debugPrint(school.latitude.toString());
     final Marker marker = Marker(
       markerId: markerId,
       position: LatLng(school.latitude, school.longitude),
@@ -117,11 +118,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
             },
           ),
           //Add some pic or a text to the center later
-         /* title: const Image(
-            image: AssetImage("assets/img/buttonlogo.png"),
-            height: 30,
-            width: 30,
-          )*/
+          title:  Text("Map",style: Theme.of(context).textTheme.headline5!.copyWith(color:AppColor.plainwhite)),
           ),
       body: SizedBox(
         height: size.height,
@@ -154,7 +151,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
                           child: const SizedBox(
                             width: 50,
                             height: 50,
-                            child: Icon(Icons.add),
+                            child: Icon(Icons.add,color:AppColor.plainwhite),
                           ),
                           onTap: () {
                             mapController.animateCamera(
@@ -173,7 +170,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
                           child: const SizedBox(
                             width: 50,
                             height: 50,
-                            child: Icon(Icons.remove),
+                            child: Icon(Icons.remove,color:AppColor.plainwhite),
                           ),
                           onTap: () {
                             mapController.animateCamera(
@@ -202,7 +199,7 @@ class _ArchedniMapState extends State<ArchedniMap> {
                           height: 50,
                           child: Icon(
                             Icons.my_location,
-                            color: AppColor.skygrey
+                            color: AppColor.plainwhite
                           ),
                         ),
                         onTap: () {

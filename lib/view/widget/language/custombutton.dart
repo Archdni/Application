@@ -1,4 +1,5 @@
- import 'package:flutter/material.dart';
+ import 'package:archdni/core/constant/color.dart';
+import 'package:flutter/material.dart';
  
 class AppCustomButtonLang
     extends StatelessWidget {
@@ -19,7 +20,7 @@ class AppCustomButtonLang
       // padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-       color:const Color.fromARGB(221, 97, 55, 155),
+       color:  AppColor.primary,
       ),
       child: MaterialButton(
         textColor: Colors.white,

@@ -1,5 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:archdni/controller/home.controller.dart';
-   import 'package:flutter/material.dart';
+import 'package:archdni/view/widget/map/mapform.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Test extends GetView<HomeController> {
@@ -7,10 +9,34 @@ class Test extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-     return   const Scaffold(
-      body: Center( ),
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            centerTitle: true,
+            title: const Text(
+              'Test',
+              style:
+                  TextStyle(color: Colors.black),
+            ),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back,
+                  color: Colors.black),
+              onPressed: () {
+                Get.back();
+              },
+            ),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation
+                  .endFloat,
+          floatingActionButton:
+              FloatingActionButton(
+            onPressed: () {},
+            child: const Icon(
+                Icons.my_location_outlined),
+          ),
+         ),
     );
   }
 }
- 
- 

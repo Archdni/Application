@@ -9,9 +9,15 @@ class SchoolModel {
   final double? rating;
   final String? price;
   final int? students;
+  final double? latitude;
+  final double? longitude;
+  final String? email;
 
   SchoolModel(
-      {this.name,
+      {this.email,
+      this.latitude,
+      this.longitude,
+      this.name,
       this.gender,
       this.city,
       this.phone,

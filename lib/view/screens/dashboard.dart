@@ -1,4 +1,5 @@
 import 'package:archdni/controller/dashboard_conroller.dart';
+import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,7 @@ class Dashboard
             items: bottomBarItems,
             currentIndex: controller.currentPage,
             unselectedItemColor: Colors.grey,
-            selectedItemColor: Colors.black,
+            selectedItemColor: AppColor.primary,
             onTap: (int index) {
               controller.onItemTapped(index);
             }),

@@ -1,111 +1,131 @@
- import 'package:archdni/controller/search_conroller.dart';
+import 'package:archdni/controller/search_conroller.dart';
 import 'package:archdni/core/constant/color.dart';
+import 'package:archdni/view/screens/map.dart';
+import 'package:archdni/view/screens/school.dart';
 import 'package:archdni/view/widget/home/card/cardbutton.dart';
 import 'package:archdni/view/widget/home/card/cardimage.dart';
-import 'package:archdni/view/widget/home/card/cardtext.dart';
+import 'package:archdni/view/widget/home/card/cardimg.dart';
+import 'package:archdni/view/widget/home/card/cradtitel.dart';
+import 'package:archdni/view/widget/home/card/detailtext.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ionicons/ionicons.dart';
 
 class AppCard
     extends GetView<SearchControllerImp> {
-  final String name;
-  final String image;
-  final String city;
-  final double rating;
-  final String price;
+  final int? index;
+  final String? name;
+  final String? image;
+  final String? city;
+  final double? rating;
+  final String? price;
+  final double? latitude;
+  final double? longitude;
+  final int? student;
   final void Function()? onTap;
   const AppCard(
+      {this.latitude,
+      this.longitude,
+      this.student,
+      this.index,
       this.name,
       this.image,
       this.city,
       this.rating,
       this.price,
       this.onTap,
-      {Key? key})
+      Key? key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    
-    return InkWell(
-      onTap:  onTap ,
-      child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius:
-                BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color:
-                    Colors.grey.withOpacity(0.5),
-                spreadRadius: 1,
-                blurRadius: 4,
-                offset: const Offset(0, 3),
-              ),
-            ],
-          ),
-          child: Padding(
+    return Container(
+        height: Get.height * 0.41,
+        width: Get.width,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+              topRight: Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+              color:
+                  AppColor.dark.withOpacity(0.2),
+              spreadRadius: 1,
+              blurRadius: 3,
+              offset: const Offset(0.5,
+                  1), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Padding(
             padding: EdgeInsets.symmetric(
-                vertical: Get.height * 0.01,
-                horizontal: Get.width * 0.04),
+                horizontal: Get.height * 0.009,
+                vertical: Get.height * 0.013),
             child: Column(
               children: [
                 Row(
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start,
+                  mainAxisAlignment:
+                      MainAxisAlignment
+                          .spaceBetween,
                   children: [
-                    AppTextCard(
-                     city: city ,
-                      name: name,
-                      rating: rating,
-                      price: price,
+                    Row(
+                      children: [
+                        AppCardAvatarImage(
+                            image: image!),
+                        AppCardTitel(
+                            name: name!,
+                            city: city!),
+                      ],
                     ),
-                    AppCardImage(
-                      image: image,
-                    )
+                    //favorite button
+                    InkWell(
+                        child: const Icon(
+                            Ionicons
+                                .heart_outline,
+                            size: 30,
+                            color: Color.fromARGB(
+                                255, 84, 84, 84)),
+                        onTap: () {}),
+                    //end of favorite button
                   ],
                 ),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
+                AppCardImg(image: image!),
                 Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment
+                          .spaceBetween,
                   children: [
+                    
+                    AppCardDeetailleText(
+                        rating:
+                            rating!.toString(),
+                        price: price!,
+                        student: student!),
                     AppButtonCard(
-                        color: Colors.transparent,
-                        textColor: Colors.black,
-                        bgColor:
-                            Colors.transparent,
-                        child: Text(
-                          "Location".tr,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight:
-                                  FontWeight
-                                      .w500),
-                          textAlign:
-                              TextAlign.center,
-                        ),
-                        onPressed: () {}),
-                    AppButtonCard(
-                        color: AppColor.primary,
-                        textColor: Colors.white,
-                        bgColor: Colors.grey,
-                        child: Text(
-                          "Explore".tr,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight:
-                                  FontWeight
-                                      .w500),
-                          textAlign:
-                              TextAlign.center,
-                        ),
-                        onPressed: () {}),
+                      onPressed: () {
+                        Get.to(
+                          School(
+                            index: index!,
+                           
+                          ),
+                          transition:
+                              Transition.downToUp,
+                          duration:
+                              const Duration(
+                                  milliseconds:
+                                      500),
+                        );
+                      },
+                    ),
                   ],
                 ),
-                SizedBox(
-                  height: Get.width * 0.02,
-                )
               ],
-            ),
-          )),
-    );
+            )));
   }
 }

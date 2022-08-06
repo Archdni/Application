@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  static const bluecell = Color(0xff9395D3);
-  static const plainwhite = Color(0xffFfFfFf);
-  static const ghostwhite = Color(0xffFBF9FF);
-  static const skygrey = Color(0xff979C9E);
-  static const black = Color(0xFF050203);
-
+  static const primary = Color(0xFF4F52FF);
+  static const secoundry = Color(0xFFFF796D);
+  static const dark = Color(0xFF2A166D);
+  static const light = Color(0xFFF5F5F5);
 }
-
 
 class AppFont {
   static const String primary = "Poppins";

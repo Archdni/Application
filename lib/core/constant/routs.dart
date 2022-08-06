@@ -1,5 +1,6 @@
 class AppRoutes {
   
+  static const onbording = '/onbording';
   //home
   static const String home = '/home';
   static const String profile = '/profile';

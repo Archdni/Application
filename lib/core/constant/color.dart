@@ -5,6 +5,10 @@ class AppColor {
   static const secoundry = Color(0xFFFF796D);
   static const dark = Color(0xFF2A166D);
   static const light = Color(0xFFF5F5F5);
+
+  static const Color white = Color(0xFFFFFFFF);
+
+  static const Color grey = Color(0xFF9B9B9B);
 }
 
 class AppFont {

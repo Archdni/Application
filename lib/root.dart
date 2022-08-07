@@ -9,5 +9,5 @@ Map<String, Widget Function(BuildContext)>
   AppRoutes.onbording: (context) =>const Onbording(),
   //home
   AppRoutes.home: (context) => const Dashboard(),
-  AppRoutes.profile: (context) => const Profile(),
+  AppRoutes.profile: (context) => const ProfilePage(),
 };

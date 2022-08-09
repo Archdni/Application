@@ -26,18 +26,21 @@ class HomeControllerImp extends HomeController {
           imageUrl: i['image'],
           phone: i['phone'],
           price: i['price'],
-          rating: i['rating'],
+          rating: i['rating'] ,
           students: i['students'],
           city: i['city'],
           gender: i['gender'],
           latitude: i["latitude"],
           longitude: i["longitude"],
           email: i["email"],
+          logo: i["logo"],
+          
         ));
       }
       isLoading = false;
     } catch (e) {
       Get.snackbar('Error', e.toString());
+      print(e);
     }
     update();
   }

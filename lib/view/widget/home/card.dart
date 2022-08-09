@@ -22,9 +22,11 @@ class AppCard
   final double? latitude;
   final double? longitude;
   final int? student;
+  final String? logo;
   final void Function()? onTap;
   const AppCard(
       {this.latitude,
+      this.logo,
       this.longitude,
       this.student,
       this.index,
@@ -74,7 +76,7 @@ class AppCard
                     Row(
                       children: [
                         AppCardAvatarImage(
-                            image: image!),
+                            logo: logo!),
                         AppCardTitel(
                             name: name!,
                             city: city!),
@@ -101,7 +103,6 @@ class AppCard
                       MainAxisAlignment
                           .spaceBetween,
                   children: [
-                    
                     AppCardDeetailleText(
                         rating:
                             rating!.toString(),
@@ -112,7 +113,6 @@ class AppCard
                         Get.to(
                           School(
                             index: index!,
-                           
                           ),
                           transition:
                               Transition.downToUp,

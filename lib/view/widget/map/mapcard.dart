@@ -1,4 +1,5 @@
 import 'package:archdni/controller/home.controller.dart';
+import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/view/widget/map/detaile.dart';
  import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,8 +14,7 @@ class AppMapCartInfo
   @override
   Widget build(BuildContext context) {
     HomeControllerImp controller = Get.put(HomeControllerImp());
-    return Scaffold(
-      body: SlidingUpPanel(
+    return SlidingUpPanel(
         body: Container(
           height: 0,
         ),
@@ -28,7 +28,7 @@ class AppMapCartInfo
         ),
         // collapsed with container
         collapsed: Container(
-          color: Colors.blueGrey,
+          color: AppColor.primary,
           child:   Center(
             child: Text(
              controller.wordList[index].name!,
@@ -37,7 +37,7 @@ class AppMapCartInfo
             ),
           ),
         ),
-      ),
-    );
+      )
+     ;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:archdni/controller/home.controller.dart';
+import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:archdni/view/screens/school.dart';
 import 'package:archdni/view/widget/school/schoolbutton.dart';
@@ -28,28 +29,28 @@ class AppDetaillesMap extends StatelessWidget {
           ListTile(
             leading: const Icon(
               Icons.location_on,
-              color: Colors.black,
+              color: AppColor.secoundry,
             ),
             title: Text(data[index!].location!),
           ),
           ListTile(
             leading: const Icon(
               Icons.phone,
-              color: Colors.black,
+              color: AppColor.secoundry,
             ),
             title: Text(data[index!].phone!),
           ),
           ListTile(
             leading: const Icon(
               Icons.email,
-              color: Colors.black,
+              color:AppColor.secoundry,
             ),
             title: Text(data[index!].email!),
           ),
           ListTile(
             leading: const Icon(
               Icons.star,
-              color: Colors.black,
+              color: AppColor.secoundry,
             ),
             title: Text(
                 data[index!].rating!.toString()),
@@ -57,7 +58,7 @@ class AppDetaillesMap extends StatelessWidget {
           ListTile(
             leading: const Icon(
               Icons.attach_money,
-              color: Colors.black,
+              color:AppColor.secoundry,
             ),
             title: Text(
                 data[index!].price!.toString()),
@@ -75,7 +76,7 @@ class AppDetaillesMap extends StatelessWidget {
                     milliseconds: 300),
               );
             },
-            color: Colors.black,
+            color: AppColor.primary,
             bgColor: Colors.white,
             child: Text(
               "Explore".tr,

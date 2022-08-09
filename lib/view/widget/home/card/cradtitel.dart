@@ -1,7 +1,5 @@
-import 'package:archdni/core/constant/color.dart';
-import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-
+ import 'package:flutter/material.dart';
+ 
 class AppCardTitel extends StatelessWidget {
   final String name;
   final String city;

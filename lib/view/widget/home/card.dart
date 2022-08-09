@@ -1,7 +1,6 @@
 import 'package:archdni/controller/search_conroller.dart';
 import 'package:archdni/core/constant/color.dart';
-import 'package:archdni/view/screens/map.dart';
-import 'package:archdni/view/screens/school.dart';
+ import 'package:archdni/view/screens/school.dart';
 import 'package:archdni/view/widget/home/card/cardbutton.dart';
 import 'package:archdni/view/widget/home/card/cardimage.dart';
 import 'package:archdni/view/widget/home/card/cardimg.dart';

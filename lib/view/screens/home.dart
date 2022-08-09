@@ -12,7 +12,7 @@ class Home extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    HomeControllerImp controller = Get.put(HomeControllerImp());
+    
     return Padding(
       padding: const EdgeInsets.symmetric(
           horizontal: 3, vertical: 5),

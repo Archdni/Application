@@ -2,8 +2,7 @@
 
 import 'package:archdni/controller/home.controller.dart';
 import 'package:archdni/controller/locatio_controller.dart';
-import 'package:archdni/core/constant/color.dart';
-import 'package:archdni/data/models/schoolmodel.dart';
+ import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:archdni/view/widget/map/mapcard.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -11,8 +10,7 @@ import 'package:flutter_map/plugin_api.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
-
+ 
 class AppMap extends StatelessWidget {
   final double? latitude;
   final double? longitude;
@@ -85,20 +83,7 @@ class AppMap extends StatelessWidget {
                       ),
                     )
 
-                        /*IconButton(
-                      icon: const Icon(
-                        Ionicons.location,
-                        color: Colors.teal,
-                        size: 40,
-                      ),
-                      onPressed: () {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (builder) {
-                              return   AppMapCartInfo(index: index,);
-                            });
-                      },
-                    )*/
+                       
                         ;
                   },
                 );

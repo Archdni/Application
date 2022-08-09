@@ -38,6 +38,7 @@ class AppListSchool extends StatelessWidget {
                             horizontal: 1,
                             vertical: 5),
                         child: AppCard(
+                          logo: data[index].logo!,
                           latitude: data[index].latitude!,
                           longitude: data[index].longitude!,
                           name: data[index].name!,

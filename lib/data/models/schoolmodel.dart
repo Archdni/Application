@@ -6,15 +6,17 @@ class SchoolModel {
   final String? imageUrl;
   final String? description;
   final String? phone;
-  final double? rating;
+  final double? rating ;
   final String? price;
   final int? students;
   final double? latitude;
   final double? longitude;
   final String? email;
+  final String? logo;
 
   SchoolModel(
       {this.email,
+      this.logo,
       this.latitude,
       this.longitude,
       this.name,

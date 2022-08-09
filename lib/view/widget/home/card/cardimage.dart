@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class AppCardAvatarImage extends StatelessWidget {
-  final String image;
+  final String? logo;
 
   const AppCardAvatarImage(
-      {Key? key, required this.image})
+      {Key? key, required this.logo})
       : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class AppCardAvatarImage extends StatelessWidget {
           ],
           image: DecorationImage(
             image: CachedNetworkImageProvider(
-                image),
+                logo!),
             fit: BoxFit.fill,
           ),
           borderRadius:

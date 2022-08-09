@@ -34,7 +34,7 @@ class School extends StatelessWidget {
           leading: Padding(
             padding: const EdgeInsets.all(6.0),
             child: AppCardAvatarImage(
-                image: school[index].imageUrl!),
+                logo: school[index].logo!),
           ),
           title: Text(
             school[index].name!,
@@ -83,12 +83,15 @@ class School extends StatelessWidget {
                           ),
                     ],
                   ),
-                   AppSchoolBody(
-                    location:
-                        school[index].location!,
-                    description: school[index]
-                        .description!,
-                    ),
+                   SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                     child: AppSchoolBody(
+                      location:
+                          school[index].location!,
+                      description: school[index]
+                          .description!,
+                      ),
+                   ),
                Row(
             mainAxisAlignment:
                 MainAxisAlignment.center,
@@ -140,50 +143,4 @@ class School extends StatelessWidget {
     );
   }
 }
-/* 
-          Row(
-            mainAxisAlignment:
-                MainAxisAlignment.center,
-            children: [
-              AppSchoolButton(
-                  color: Colors.transparent,
-                  bgColor: Colors.transparent,
-                  child: Text(
-                    "Location".tr,
-                    style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight:
-                            FontWeight.w500),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {
-                    Get.to(
-                      () => MapPage(
-                        latitude: school[index]
-                            .latitude!,
-                        longitude: school[index]
-                            .longitude!,
-                      ),
-                      routeName: '/AppMap',
-                      transition:
-                          Transition.downToUp,
-                      duration: const Duration(
-                          milliseconds: 300),
-                    );
-                  }),
-              AppSchoolButton(
-                  color: Colors.black,
-                  bgColor: Colors.grey,
-                  child: Text(
-                    "connect with us".tr,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight:
-                            FontWeight.w500),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {}),
-            ],
-          ),*/
+ 

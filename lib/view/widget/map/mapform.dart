@@ -2,6 +2,7 @@
 
 import 'package:archdni/controller/home.controller.dart';
 import 'package:archdni/controller/locatio_controller.dart';
+import 'package:archdni/core/constant/color.dart';
 import 'package:archdni/data/models/schoolmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:archdni/view/widget/map/mapcard.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_map/plugin_api.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class AppMap extends StatelessWidget {
   final double? latitude;
@@ -63,6 +65,15 @@ class AppMap extends StatelessWidget {
                       data[index].longitude!),
                   builder: (ctx) {
                     return InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return AppMapCartInfo(
+                                index: index,
+                              );
+                            });
+                      },
                       child: SizedBox(
                         height: 20.0,
                         width: 20.0,

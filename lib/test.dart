@@ -1,7 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:archdni/controller/home.controller.dart';
-import 'package:archdni/view/widget/map/mapform.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Test extends GetView<HomeController> {

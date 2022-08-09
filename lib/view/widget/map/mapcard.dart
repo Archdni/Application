@@ -15,18 +15,16 @@ class AppMapCartInfo
   Widget build(BuildContext context) {
     HomeControllerImp controller = Get.put(HomeControllerImp());
     return SlidingUpPanel(
-        body: Container(
-          height: 0,
-        ),
+         
          backdropTapClosesPanel: false,
-        // panel with centered text
+       
         panel:   Center(
           child: AppDetaillesMap(index: index),
                
                 
               
         ),
-        // collapsed with container
+     
         collapsed: Container(
           color: AppColor.primary,
           child:   Center(

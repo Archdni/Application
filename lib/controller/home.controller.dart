@@ -40,7 +40,7 @@ class HomeControllerImp extends HomeController {
       isLoading = false;
     } catch (e) {
       Get.snackbar('Error', e.toString());
-      print(e);
+      
     }
     update();
   }
